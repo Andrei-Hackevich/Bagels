@@ -28,8 +28,10 @@ def get_num():
 def secret_num(num):
     for i in range(0, max_guesses):
         print(f'Попытка {i + 1}')
-        while len(choice) != max_digit or not choice.isdecimal():
+        while True:
             choice = input('Введите ваше число: ')
+            if len(choice) == max_digit and choice.isdecimal():
+                break
         if choice == num:
             print('Вы угадали правильное число!!! Поздравляем!!!')
             break
